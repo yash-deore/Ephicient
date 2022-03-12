@@ -7,22 +7,37 @@ const PatientDashboard = () => {
 
     const [age, setAge] = useState(0);
     const [gender, setGender] = useState("");
-    const [symptoms, setSymptoms] = useState([]);
     const [phoneNumber, setPhoneNumber] = useState(0);
+    const [isPregnant, setIsPregnant] = useState("no");
+    const [symptoms, setSymptoms] = useState("");
+    const [allergies, setAllergies] = useState("");
+    const [currentMedications, setCurrentMedications] = useState("");
+
+    const pregnancyStatus = () => {
+        if (gender === "female")
+            if (isPregnant === "no")
+                return <Card.Title>Not Pregnant</Card.Title>;
+            else return <Card.Title>Pregnant</Card.Title>;
+    };
 
     useEffect(() => {
         if (
             localStorage.getItem("age") === null ||
             localStorage.getItem("gender") === null ||
-            localStorage.getItem("symptoms") === null ||
             localStorage.getItem("phoneNumber") === null
         ) {
             navigate("/patient");
         } else {
             setAge(localStorage.getItem("age"));
-            setGender(localStorage.getItem("gender"));
-            setSymptoms(localStorage.getItem("symptoms"));
             setPhoneNumber(localStorage.getItem("phoneNumber"));
+            setGender(localStorage.getItem("gender"));
+            if (gender === "female")
+                if (localStorage.getItem("isPregnant") === "yes")
+                    setIsPregnant("yes");
+
+            setSymptoms(localStorage.getItem("symptoms"));
+            setAllergies(localStorage.getItem("allergies"));
+            setCurrentMedications(localStorage.getItem("currentMedications"));
         }
     });
 
@@ -34,6 +49,12 @@ const PatientDashboard = () => {
                     <Card.Title>
                         {age} years, {gender}
                     </Card.Title>
+
+                    {pregnancyStatus()}
+
+                    <Card.Text>
+                        <b>Phone Number:</b> {phoneNumber}
+                    </Card.Text>
                     <hr />
 
                     <Card.Text>
@@ -41,10 +62,20 @@ const PatientDashboard = () => {
                     </Card.Text>
 
                     <Card.Text>
-                        <b>Phone Number:</b> {phoneNumber}
+                        <b>Allergies:</b>{" "}
+                        {allergies === "" ? "None" : allergies}
+                    </Card.Text>
+
+                    <Card.Text>
+                        <b>Current Medications:</b>{" "}
+                        {currentMedications === ""
+                            ? "None"
+                            : currentMedications}
                     </Card.Text>
                 </Card.Body>
             </Card>
+            Your request is under process <br />
+            Patient Id:
         </Container>
     );
 };
