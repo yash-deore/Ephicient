@@ -36,13 +36,14 @@ def submit_form():
     dob = request.json["dob"]
     gender = request.json["gender"]
     allergy = request.json["allergy"]
+    medication = request.json["medication"]
     phone_number = request.json["phone_number"]
     pregnant = request.json["pregnant"]
     description = request.json["description"]
     symptom = request.json["symptom"]
     location = request.json["location"]
 
-    new_request =Request(dob=dob,gender =gender,allergy=allergy,phone_number=phone_number,pregnant=pregnant,description=description,symptom=symptom,location=location )
+    new_request =Request(dob=dob,gender =gender,allergy=allergy,medication=medication,phone_number=phone_number,pregnant=pregnant,description=description,symptom=symptom,location=location )
     db.session.add(new_request)
     db.session.commit()
     print("testing print statement")

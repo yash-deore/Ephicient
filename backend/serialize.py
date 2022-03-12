@@ -5,6 +5,7 @@ def serializerRequest(object):
 		'dob':object.dob,
 		'gender':object.gender,
 		'allergy': object.allergy,
+		'medication': object.medication,
 		'phone_number': object.phone_number,
 		'pregnant':object.pregnant,
         'description':object.description,
