@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Ephicient/frontend/static/css/main.476b1df3.css",
-    "main.js": "/Ephicient/frontend/static/js/main.747e9d4b.js",
-    "index.html": "/Ephicient/frontend/index.html",
-    "main.476b1df3.css.map": "/Ephicient/frontend/static/css/main.476b1df3.css.map",
-    "main.747e9d4b.js.map": "/Ephicient/frontend/static/js/main.747e9d4b.js.map"
+    "main.css": "/Ephicient/static/css/main.476b1df3.css",
+    "main.js": "/Ephicient/static/js/main.747e9d4b.js",
+    "index.html": "/Ephicient/index.html",
+    "main.476b1df3.css.map": "/Ephicient/static/css/main.476b1df3.css.map",
+    "main.747e9d4b.js.map": "/Ephicient/static/js/main.747e9d4b.js.map"
   },
   "entrypoints": [
     "static/css/main.476b1df3.css",
