@@ -57,13 +57,23 @@ def submit_form():
 
 @app.route('/retrieval_of_queue_information', methods=['GET'])
 def send_all_info():
-    request = Request.query.all();
+    request = Request.query.all()
     return jsonify(
 
         [*map(serializerRequest,request)]
             
         
     )
+
+
+@app.route('/fuflling_a_queue/<int:req_id>', methods=['PUT'])
+def delete_one_request(req_id):
+    old_req_id=str(Request.query.filter_by(req_id=req_id).first())
+    Request.query.filter_by(req_id=req_id).delete()
+    db.session.commit()
+    return jsonify({
+        "msg":"succuesffuly removed" +old_req_id
+    })
 
 
 if __name__ == "__main__":
