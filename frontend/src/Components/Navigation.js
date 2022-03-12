@@ -7,11 +7,11 @@ const Navigation = () => {
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="/">👨‍⚕️💊Ephicient💊👩‍⚕️</Navbar.Brand>
+                <Navbar.Brand href="/Ephicient">👨‍⚕️💊Ephicient💊👩‍⚕️</Navbar.Brand>
 
                 <Nav>
                     <Nav.Link>
-                        <Link to="/" style={LinkStyle}>
+                        <Link to="/Ephicient" style={LinkStyle}>
                             Home
                         </Link>
                     </Nav.Link>
