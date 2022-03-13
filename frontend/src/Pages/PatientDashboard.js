@@ -36,7 +36,7 @@ const PatientDashboard = () => {
                     pregnant: isPregnant,
                     description: description,
                     symptom: symptoms,
-                    location: "Queue_BBBBB",
+                    location: "",
                 }
             )
             .then((response) => {
