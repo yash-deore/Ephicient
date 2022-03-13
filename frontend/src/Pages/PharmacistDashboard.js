@@ -1,9 +1,30 @@
+import { Container, Tabs, Tab } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const PharmacistDashboard = () => {
     const navigate = useNavigate();
     const [pharmaName, setPharmaName] = useState("");
+    const [globalQueue, setGlobalQueue] = useState([]);
+
+    const retrieve = async () => {
+        try {
+            const response = await axios.get(
+                "https://damp-fjord-26709.herokuapp.com/retrieval_of_queue_information",
+                { withCredentials: true }
+            );
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(async () => {
+        const data = await retrieve();
+        console.log("data: ", data);
+    }, []);
 
     useEffect(() => {
         // Checks if the user is logged in or not
@@ -18,10 +39,19 @@ const PharmacistDashboard = () => {
     });
 
     return (
-        <div>
+        <Container>
             <h1>Welcome {pharmaName}</h1>
             Here we will have the task queues.
-        </div>
+            <Tabs defaultActiveKey="all tasks" className="mb-3">
+                <Tab eventKey="all tasks" title="All Tasks">
+                    All the retrieved tasks here
+                </Tab>
+
+                <Tab eventKey="local tasks" title="Accepted Tasks">
+                    All the accepted tasks here
+                </Tab>
+            </Tabs>
+        </Container>
     );
 };
 

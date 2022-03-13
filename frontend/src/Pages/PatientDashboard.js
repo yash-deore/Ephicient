@@ -24,6 +24,7 @@ const PatientDashboard = () => {
     };
 
     const confirmPatientRequest = () => {
+        axios.defaults.withCredentials = true;
         axios
             .post(
                 "https://damp-fjord-26709.herokuapp.com/submitting_the_form",
@@ -42,6 +43,9 @@ const PatientDashboard = () => {
             .then((response) => {
                 console.log(response, "success");
                 setSuccess(true);
+            })
+            .catch((err) => {
+                console.log(err);
             });
     };
 

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Patient = () => {
     const [age, setAge] = useState(0);
     const [gender, setGender] = useState("");
+    const [description, setDescription] = useState("");
     const [symptoms, setSymptoms] = useState([]);
     const [currentMedications, setCurrentMedications] = useState([]);
     const [allergies, setAllergies] = useState([]);
@@ -20,6 +21,7 @@ const Patient = () => {
         localStorage.setItem("age", age);
         localStorage.setItem("gender", gender);
         localStorage.setItem("isPregnant", isPregnant);
+        localStorage.setItem("description", description);
         localStorage.setItem("phoneNumber", phoneNumber);
         localStorage.setItem("symptoms", symptoms);
         localStorage.setItem("currentMedications", currentMedications);
@@ -75,6 +77,16 @@ const Patient = () => {
                 ) : (
                     ""
                 )}
+
+                {/* Description */}
+                <Form.Group className="mb-3">
+                    <Form.Label>Describe your situation :</Form.Label>
+                    <Form.Control
+                        as="textarea"
+                        rows={3}
+                        onChange={(e) => setDescription(e.target.value)}
+                    />
+                </Form.Group>
 
                 {/* Phone Number */}
                 <Form.Group className="mb-3">
