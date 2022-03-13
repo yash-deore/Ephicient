@@ -37,7 +37,7 @@ const PatientDashboard = () => {
                     pregnant: isPregnant,
                     description: description,
                     symptom: symptoms,
-                    location: "",
+                    pharmacist: "",
                 }
             )
             .then((response) => {

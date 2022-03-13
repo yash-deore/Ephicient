@@ -1,4 +1,4 @@
-import { Container, Tabs, Tab } from "react-bootstrap";
+import { Container, Tabs, Tab, Card } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -21,8 +21,25 @@ const PharmacistDashboard = () => {
         }
     };
 
+    const renderTasks = () => {
+        globalQueue.map(
+            ({
+                age,
+                allergy,
+                current_medications,
+                description,
+                gender,
+                pharmacist,
+                phone_number,
+                pregnant,
+                symptom,
+            }) => <Card>Hello</Card>
+        );
+    };
+
     useEffect(async () => {
         const data = await retrieve();
+        setGlobalQueue(data);
         console.log("data: ", data);
     }, []);
 
@@ -44,6 +61,7 @@ const PharmacistDashboard = () => {
             Here we will have the task queues.
             <Tabs defaultActiveKey="all tasks" className="mb-3">
                 <Tab eventKey="all tasks" title="All Tasks">
+                    {renderTasks()}
                     All the retrieved tasks here
                 </Tab>
 
