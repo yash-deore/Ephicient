@@ -110,10 +110,6 @@ const PatientDashboard = () => {
                             Confirm Request
                         </Button>
                     )}
-
-                    {/* <Button onClick={() => confirmPatientRequest()}>
-                        Confirm Request
-                    </Button> */}
                 </Card.Body>
             </Card>
         </Container>
