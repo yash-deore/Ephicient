@@ -3,13 +3,16 @@ import { Container } from "react-bootstrap";
 const HomePage = () => {
     return (
         <Container>
-            Home Page will contain the following things:
-            <br />
-            1. Demo video
-            <br />
-            2. Pitch script ie. how the project works
-            <br />
-            3. More things if needed.
+            <h4>Demo Video:</h4>
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/oGiaj4IXqnY"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
         </Container>
     );
 };
