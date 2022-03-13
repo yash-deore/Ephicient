@@ -104,7 +104,7 @@ const PatientDashboard = () => {
                     </Card.Text>
 
                     {success ? (
-                        <h4>Request Submitted 😃</h4>
+                        <h4>Request Submitted successfully 😃</h4>
                     ) : (
                         <Button onClick={() => confirmPatientRequest()}>
                             Confirm Request
