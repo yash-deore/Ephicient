@@ -83,10 +83,10 @@ const PharmacistDashboard = () => {
     return (
         <Container>
             <h1>Welcome {pharmaName}</h1>
-            Here we will have the task queues.
+            After accepting a task please wait for some time. <br />
+            Then refresh and check your accepted tasks.
             <Tabs defaultActiveKey="all tasks" className="mb-3">
                 <Tab eventKey="all tasks" title="All Tasks">
-                    All the retrieved tasks here
                     {globalQueue.map(
                         ({
                             age,
@@ -180,7 +180,6 @@ const PharmacistDashboard = () => {
                 </Tab>
 
                 <Tab eventKey="local tasks" title="Accepted Tasks">
-                    All the accepted tasks here
                     {globalQueue.map(
                         ({
                             age,
