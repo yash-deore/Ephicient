@@ -106,14 +106,14 @@ const PatientDashboard = () => {
                     {success ? (
                         <h4>Request Submitted 😃</h4>
                     ) : (
-                        <Button onClick={confirmPatientRequest()}>
+                        <Button onClick={() => confirmPatientRequest()}>
                             Confirm Request
                         </Button>
                     )}
 
-                    <Button onClick={confirmPatientRequest()}>
+                    {/* <Button onClick={() => confirmPatientRequest()}>
                         Confirm Request
-                    </Button>
+                    </Button> */}
                 </Card.Body>
             </Card>
         </Container>
